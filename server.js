@@ -1,13 +1,13 @@
 const express = require("express")
 const cors = require("cors")
-const customerRouter = require("./customer/customer-router")
+const CustomerRouter = require("./customer/customer-router")
 
 const server = express()
 
 server.use(cors())
 server.use(express.json())
 
-server.use("/customer", customerRouter)
+server.use("/customer", CustomerRouter)
 server.get("/", (req, res) => {
 	res.json({
 		message: "Welcome to our API",
